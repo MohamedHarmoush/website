@@ -16,16 +16,12 @@ interface HomeProps {
 
 export default function Home({ resume }: HomeProps) {
   const [websiteUrl, setWebsiteUrl] = useState<string>('');
-  const [pdfPath, setPdfPath] = useState<string>(resume.personal.resumePdf || '');
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setWebsiteUrl(window.location.href);
-      // Get basePath from window location or Next.js __NEXT_DATA__
-      const basePath = (window as any).__NEXT_DATA__?.basePath || '';
-      setPdfPath(`${basePath}${resume.personal.resumePdf}`);
     }
-  }, [resume.personal.resumePdf]);
+  }, []);
 
   return (
     <>
@@ -118,7 +114,7 @@ export default function Home({ resume }: HomeProps) {
           {resume.personal.resumePdf && (
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-3 flex-wrap mt-8 print:hidden">
               <a
-                href={pdfPath}
+                href={resume.personal.resumePdf}
                 download="Mohamed_Harmoush_Resume.pdf"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-5 sm:py-2.5 bg-yellow-primary text-white rounded-[50px] sm:rounded-[40px] text-sm sm:text-xs font-medium hover:bg-yellow-dark transition-all duration-300 shadow-[0_4px_15px_rgba(245,158,11,0.3)] hover:shadow-[0_8px_30px_rgba(245,158,11,0.4)] active:scale-95"
                 aria-label="Download resume PDF"
@@ -144,9 +140,21 @@ export default function Home({ resume }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  // Get basePath from environment variable (set during build)
+  const basePath = process.env.BASE_PATH || '';
+  
+  // Add basePath to resume PDF path
+  const resumeWithBasePath = {
+    ...resumeData,
+    personal: {
+      ...resumeData.personal,
+      resumePdf: `${basePath}${resumeData.personal.resumePdf}`,
+    },
+  };
+  
   return {
     props: {
-      resume: resumeData as Resume,
+      resume: resumeWithBasePath as Resume,
     },
   };
 };
