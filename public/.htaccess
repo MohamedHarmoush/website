@@ -1,0 +1,8 @@
+# Redirect /resume to home
+RewriteEngine On
+RewriteRule ^resume/?$ / [R=301,L]
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+

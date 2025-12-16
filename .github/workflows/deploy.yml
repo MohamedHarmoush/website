@@ -57,12 +57,25 @@ jobs:
             echo "⚠ No CNAME file found - using GitHub Pages subdomain"
           fi
       
-      - name: Copy redirect files
+      - name: Create redirect for /resume
         run: |
-          if [ -d public/resume ]; then
-            cp -r public/resume out/resume
-            echo "✓ Resume redirect copied to build output"
-          fi
+          mkdir -p out/resume
+          cat > out/resume/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <title>Redirecting...</title>
+            <meta http-equiv="refresh" content="0; url=../">
+            <link rel="canonical" href="../">
+            <script>window.location.replace('../');</script>
+          </head>
+          <body>
+            <p>Redirecting to <a href="../">home page</a>...</p>
+          </body>
+          </html>
+          EOF
+          echo "✓ Created redirect for /resume"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

@@ -65,6 +65,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* Force HTTPS - HSTS header */}
+        <meta httpEquiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains" />
+        
         {/* Primary Meta Tags */}
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
