@@ -1,0 +1,64 @@
+Mohamed Harmoush
+Senior Software Engineer
+
+Contact Information:
+Email: mkotb.harmoush@gmail.com
+Phone: +49 162 573 4771
+Location: Düsseldorf, Germany (open to relocation)
+LinkedIn: https://www.linkedin.com/in/mohamedharmoush/
+GitHub: https://github.com/MohamedHarmoush
+
+Passionate Android Engineer with 5+ years of experience building high-performance apps using Kotlin, Jetpack Compose, and scalable architectures. Skilled in designing clean, maintainable code and optimizing performance. Experienced in collaborating with cross-functional teams, including product managers, designers, and backend engineers, to deliver seamless user experiences.
+
+PROFESSIONAL EXPERIENCE
+==================================================
+
+Senior Software Engineer
+Check24 - Düsseldorf, Germany
+2024-04 - Present
+
+• Designed and built the Kreuzfahrten Android Plugin using Clean Architecture, Kotlin, Jetpack Compose, Dagger, and gRPC, ensuring maintainable code
+• Implemented Server-Driven UI for the components of the Kreuzfahrten plugin, enabling dynamic and flexible UI rendering based on backend configurations
+• Improved user experience by collaborating with product managers, resulting in a 10% increase in customer satisfaction
+• Optimized the Kreuzfahrten plugin, reducing its size by 40%, improving performance, and enhancing maintainability
+
+Software Engineer
+Check24 - Münster, Germany
+2022-08 - 2024-04
+
+• Developed and optimized Android features for the Komplettrad and Reifen plugins
+• Led code refactoring initiatives, migrating legacy Java code to Kotlin, improving code maintainability and scalability by 25%
+• Mentored junior developers and collaborated cross-functionally, enhancing team efficiency and development speed
+
+Software Engineer
+EME International - Cairo, Egypt
+2021-05 - 2022-07
+
+• Developed features and supported mSales app in a two-person team, enhancing functionality and user experience, increasing user satisfaction
+• Improved order management by keeping detailed logs, cutting error rates by 30%
+• Integrated handheld thermal printers for invoice printing, ensuring seamless operations
+
+Software Engineer
+Identity-Solutions - Alexandria, Egypt
+2018-07 - 2021-04
+
+• Developed new Android apps from scratch on a team of two. Ex: Fanzword & Tutlez
+• Supported existing Android apps either by bug fixing or adding new features. Ex: Upspeak & Sayar
+• Collaborated with clients to gather requirements, ensuring the delivery of tailored and user-centric solutions
+
+EDUCATION
+==================================================
+
+Bachelor of Computer Science in Computer Science
+Ain Shams University - Cairo, Egypt
+2014 - 2018
+
+SKILLS
+==================================================
+
+Android Development: Java, Kotlin, Jetpack Compose, Coroutines, Flow, Navigation, Paging, Data Binding
+Architecture: MVP, MVVM, MVI, Clean Architecture, SOLID Principles
+Networking: gRPC, REST APIs
+Testing: Unit Testing, UI Testing, JUnit, Espresso, Mockito, Snapshot Testing
+Dependency Injection: Dagger2, Hilt, Koin
+Tools: Git, Bitbucket, GitHub

@@ -1,5 +1,6 @@
 import { Resume } from '@/types/resume';
-import Link from 'next/link';
+import { HiLocationMarker, HiMail } from 'react-icons/hi';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 interface HeroSidebarProps {
   resume: Resume;
@@ -29,32 +30,18 @@ export default function HeroSidebar({ resume }: HeroSidebarProps) {
 
         {personal.contact.location && (
           <div className="hero-location text-text-secondary text-sm sm:text-xs flex items-center justify-center gap-2 mb-5 sm:mb-4 flex-wrap px-2">
-            <svg className="w-4 h-4 sm:w-3.5 sm:h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
+            <HiLocationMarker className="w-4 h-4 sm:w-3.5 sm:h-3.5 flex-shrink-0 text-yellow-primary" />
             <span className="text-center">{personal.contact.location}</span>
           </div>
         )}
 
         <div className="hero-links flex flex-col items-center gap-3 sm:gap-2.5">
-          <Link
-            href="/"
-            className="hero-link inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-4 sm:py-2 w-full max-w-[200px] sm:max-w-full bg-white/60 backdrop-blur-[10px] border border-white/80 rounded-[50px] text-text-primary no-underline font-medium transition-all duration-300 text-sm sm:text-xs shadow-[0_4px_15px_rgba(0,0,0,0.05)] hover:bg-yellow-primary hover:text-white hover:border-yellow-primary hover:shadow-[0_8px_30px_rgba(245,158,11,0.3)] active:scale-95"
-          >
-            Home
-          </Link>
-          <Link
-            href="/resume"
-            className="hero-link inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-4 sm:py-2 w-full max-w-[200px] sm:max-w-full bg-white/60 backdrop-blur-[10px] border border-white/80 rounded-[50px] text-text-primary no-underline font-medium transition-all duration-300 text-sm sm:text-xs shadow-[0_4px_15px_rgba(0,0,0,0.05)] hover:bg-yellow-primary hover:text-white hover:border-yellow-primary hover:shadow-[0_8px_30px_rgba(245,158,11,0.3)] active:scale-95"
-          >
-            Resume
-          </Link>
           {personal.contact.email && (
             <a
               href={`mailto:${personal.contact.email}`}
               className="hero-link inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-4 sm:py-2 w-full max-w-[200px] sm:max-w-full bg-white/60 backdrop-blur-[10px] border border-white/80 rounded-[50px] text-text-primary no-underline font-medium transition-all duration-300 text-sm sm:text-xs shadow-[0_4px_15px_rgba(0,0,0,0.05)] hover:bg-yellow-primary hover:text-white hover:border-yellow-primary hover:shadow-[0_8px_30px_rgba(245,158,11,0.3)] active:scale-95"
             >
+              <HiMail className="w-4 h-4" />
               Contact
             </a>
           )}
@@ -66,6 +53,7 @@ export default function HeroSidebar({ resume }: HeroSidebarProps) {
                 rel="noopener noreferrer"
                 className="hero-link inline-flex items-center justify-center gap-1.5 px-4 py-2 sm:px-3 sm:py-1.5 flex-1 bg-white/60 backdrop-blur-[10px] border border-white/80 rounded-[50px] text-text-primary no-underline font-medium transition-all duration-300 text-xs shadow-[0_4px_15px_rgba(0,0,0,0.05)] hover:bg-yellow-primary hover:text-white hover:border-yellow-primary hover:shadow-[0_8px_30px_rgba(245,158,11,0.3)] active:scale-95"
               >
+                <FaLinkedin className="w-4 h-4" />
                 LinkedIn
               </a>
             )}
@@ -76,6 +64,7 @@ export default function HeroSidebar({ resume }: HeroSidebarProps) {
                 rel="noopener noreferrer"
                 className="hero-link inline-flex items-center justify-center gap-1.5 px-4 py-2 sm:px-3 sm:py-1.5 flex-1 bg-white/60 backdrop-blur-[10px] border border-white/80 rounded-[50px] text-text-primary no-underline font-medium transition-all duration-300 text-xs shadow-[0_4px_15px_rgba(0,0,0,0.05)] hover:bg-yellow-primary hover:text-white hover:border-yellow-primary hover:shadow-[0_8px_30px_rgba(245,158,11,0.3)] active:scale-95"
               >
+                <FaGithub className="w-4 h-4" />
                 GitHub
               </a>
             )}

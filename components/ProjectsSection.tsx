@@ -1,4 +1,6 @@
 import { Project } from '@/types/resume';
+import { HiExternalLink } from 'react-icons/hi';
+import { FaGithub } from 'react-icons/fa';
 
 interface ProjectsSectionProps {
   projects: Project[];
@@ -24,8 +26,9 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-yellow-primary hover:text-yellow-dark text-sm sm:text-xs font-medium transition-colors"
+                    className="text-yellow-primary hover:text-yellow-dark text-sm sm:text-xs font-medium transition-colors flex items-center gap-1"
                   >
+                    <HiExternalLink className="w-4 h-4" />
                     Live
                   </a>
                 )}
@@ -34,8 +37,9 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-yellow-primary hover:text-yellow-dark text-sm sm:text-xs font-medium transition-colors"
+                    className="text-yellow-primary hover:text-yellow-dark text-sm sm:text-xs font-medium transition-colors flex items-center gap-1"
                   >
+                    <FaGithub className="w-4 h-4" />
                     GitHub
                   </a>
                 )}
@@ -53,9 +57,9 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
               ))}
             </div>
             {project.highlights && project.highlights.length > 0 && (
-              <ul className="list-none space-y-1">
+              <ul className="list-none space-y-1.5">
                 {project.highlights.map((highlight, idx) => (
-                  <li key={idx} className="text-sm sm:text-xs text-text-secondary leading-relaxed relative pl-5 sm:pl-4 before:content-['▸'] before:absolute before:left-0 before:text-yellow-primary">
+                  <li key={idx} className="text-[15px] sm:text-sm text-text-secondary leading-relaxed relative pl-5 sm:pl-4 before:content-['•'] before:absolute before:left-0 before:text-yellow-primary before:font-bold before:text-lg sm:before:text-base">
                     {highlight}
                   </li>
                 ))}
