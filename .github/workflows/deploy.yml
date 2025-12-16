@@ -56,6 +56,13 @@ jobs:
           else
             echo "⚠ No CNAME file found - using GitHub Pages subdomain"
           fi
+      
+      - name: Copy redirect files
+        run: |
+          if [ -d public/resume ]; then
+            cp -r public/resume out/resume
+            echo "✓ Resume redirect copied to build output"
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
