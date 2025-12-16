@@ -83,7 +83,7 @@ export default function Document() {
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="profile" />
-        <meta property="og:url" content={personal.contact.website || 'https://mohamedHarmoush.com'} />
+        <meta property="og:url" content={personal.contact.website || 'https://mohamedharmoush.github.io/website'} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:site_name" content={`${fullName} - Resume`} />
