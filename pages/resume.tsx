@@ -14,11 +14,9 @@ interface ResumePageProps {
 }
 
 export default function ResumePage({ resume }: ResumePageProps) {
-  const [currentDate, setCurrentDate] = useState<string>('');
   const [websiteUrl, setWebsiteUrl] = useState<string>('');
 
   useEffect(() => {
-    setCurrentDate(new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
     if (typeof window !== 'undefined') {
       setWebsiteUrl(window.location.href);
     }
@@ -92,12 +90,11 @@ export default function ResumePage({ resume }: ResumePageProps) {
         {resume.personal.summary && (
           <div className="glass-card mb-8 print:border-0 print:shadow-none">
             <h2 className="section-title">Summary</h2>
-            <p className="text-text-secondary sm:text-sm leading-relaxed">{resume.personal.summary}</p>
+            <p className="text-text-secondary text-lg sm:text-base leading-relaxed">{resume.personal.summary}</p>
           </div>
         )}
 
         <ExperienceSection experiences={resume.experience} />
-        <EducationSection education={resume.education} />
         <SkillsSection skills={resume.skills} />
         
         {resume.projects && resume.projects.length > 0 && (
@@ -108,17 +105,16 @@ export default function ResumePage({ resume }: ResumePageProps) {
           <CertificationsSection certifications={resume.certifications} />
         )}
 
+        <EducationSection education={resume.education} />
+
         {/* Print-friendly footer */}
-        <div className="mt-8 pt-6 border-t border-gray-200 print:border-t-2 print:border-gray-400 text-center">
-          <p className="text-xs sm:text-[10px] text-text-secondary print:text-gray-600 print:text-sm">
-            {currentDate && `Last updated: ${currentDate}`}
-          </p>
-          {websiteUrl && (
-            <div className="hidden print:block mt-4 text-xs text-gray-500">
-              <p>This resume is available online at: {websiteUrl}</p>
-            </div>
-          )}
-        </div>
+        {websiteUrl && (
+          <div className="hidden print:block mt-8 pt-6 border-t-2 border-gray-400 text-center">
+            <p className="text-xs text-gray-500">
+              This resume is available online at: {websiteUrl}
+            </p>
+          </div>
+        )}
       </div>
     </div>
     </>

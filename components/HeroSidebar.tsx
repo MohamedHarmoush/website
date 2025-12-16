@@ -29,9 +29,9 @@ export default function HeroSidebar({ resume }: HeroSidebarProps) {
         </p>
 
         {personal.contact.location && (
-          <div className="hero-location text-text-secondary text-sm sm:text-xs flex items-center justify-center gap-2 mb-5 sm:mb-4 flex-wrap px-2">
-            <HiLocationMarker className="w-4 h-4 sm:w-3.5 sm:h-3.5 flex-shrink-0 text-yellow-primary" />
-            <span className="text-center">{personal.contact.location}</span>
+          <div className="hero-location text-text-secondary text-base sm:text-sm flex items-center justify-center gap-2 mb-5 sm:mb-4 px-2">
+            <HiLocationMarker className="w-4 h-4 flex-shrink-0 text-text-secondary/60" />
+            <span className="text-center font-normal">{personal.contact.location}</span>
           </div>
         )}
 
@@ -39,10 +39,13 @@ export default function HeroSidebar({ resume }: HeroSidebarProps) {
           {personal.contact.email && (
             <a
               href={`mailto:${personal.contact.email}`}
-              className="hero-link inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-4 sm:py-2 w-full max-w-[200px] sm:max-w-full bg-white/60 backdrop-blur-[10px] border border-white/80 rounded-[50px] text-text-primary no-underline font-medium transition-all duration-300 text-sm sm:text-xs shadow-[0_4px_15px_rgba(0,0,0,0.05)] hover:bg-yellow-primary hover:text-white hover:border-yellow-primary hover:shadow-[0_8px_30px_rgba(245,158,11,0.3)] active:scale-95"
+              className="hero-link inline-flex flex-col items-center justify-center gap-1 px-5 py-2.5 sm:px-4 sm:py-2 w-full max-w-[200px] sm:max-w-full bg-white/60 backdrop-blur-[10px] border border-white/80 rounded-[50px] text-text-primary no-underline transition-all duration-300 shadow-[0_4px_15px_rgba(0,0,0,0.05)] hover:bg-yellow-primary hover:text-white hover:border-yellow-primary hover:shadow-[0_8px_30px_rgba(245,158,11,0.3)] active:scale-95"
             >
-              <HiMail className="w-4 h-4" />
-              Contact
+              <div className="flex items-center gap-2">
+                <HiMail className="w-4 h-4" />
+                <span className="text-xs font-semibold">Email</span>
+              </div>
+              <span className="text-[11px] sm:text-[10px] font-normal break-all opacity-90">{personal.contact.email}</span>
             </a>
           )}
           <div className="flex flex-row gap-2 sm:gap-1.5 w-full max-w-[200px] sm:max-w-full justify-center">

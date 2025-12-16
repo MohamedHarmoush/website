@@ -16,34 +16,34 @@ export default function EducationSection({ education }: EducationSectionProps) {
               <HiAcademicCap className="w-8 h-8 sm:w-7 sm:h-7 text-white" />
             </div>
             <div className="education-details flex-1 min-w-0">
-              <h3 className="text-lg sm:text-base text-text-primary mb-1 font-semibold flex items-center gap-2">
+              <h3 className="text-lg sm:text-base text-text-primary mb-2 font-semibold">
                 {edu.degree}
                 {edu.field && <span className="text-text-secondary font-normal"> in {edu.field}</span>}
               </h3>
-              <p className="text-text-secondary text-sm sm:text-xs mb-1">{edu.institution}</p>
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-sm sm:text-xs text-text-secondary flex items-center gap-1">
-                  <HiCalendar className="w-3.5 h-3.5 text-yellow-primary" />
+              <p className="text-text-secondary text-base sm:text-sm mb-2">{edu.institution}</p>
+              <div className="flex items-center gap-4 flex-wrap mb-2">
+                <span className="text-base sm:text-sm text-text-secondary flex items-center gap-2 font-normal">
+                  <HiCalendar className="w-4 h-4 text-text-secondary/60 flex-shrink-0" />
                   {edu.startDate} - {edu.endDate}
                 </span>
                 {edu.location && (
-                  <span className="text-sm sm:text-xs text-text-secondary flex items-center gap-1">
-                    <HiMapPin className="w-3.5 h-3.5 text-yellow-primary" />
+                  <span className="text-base sm:text-sm text-text-secondary flex items-center gap-2 font-normal">
+                    <HiMapPin className="w-4 h-4 text-text-secondary/60 flex-shrink-0" />
                     {edu.location}
                   </span>
                 )}
               </div>
               {edu.gpa && (
-                <span className="gpa-badge inline-flex items-center gap-1 bg-yellow-primary/15 text-yellow-dark px-3 py-1 sm:px-2 sm:py-0.5 rounded-[20px] text-xs sm:text-[10px] mt-2 font-semibold">
-                  <HiTrophy className="w-3 h-3" />
+                <span className="gpa-badge inline-flex items-center gap-1.5 bg-yellow-primary/15 text-yellow-dark px-3 py-1.5 sm:px-2.5 sm:py-1 rounded-[20px] text-sm sm:text-xs mt-2 font-semibold">
+                  <HiTrophy className="w-3.5 h-3.5" />
                   GPA: {edu.gpa}
                 </span>
               )}
               {edu.honors && edu.honors.length > 0 && (
-                <ul className="list-none mt-2 space-y-1.5">
+                <ul className="list-none mt-3 space-y-2">
                   {edu.honors.map((honor, idx) => (
-                    <li key={idx} className="text-[15px] sm:text-sm text-text-secondary flex items-center gap-1.5">
-                      <HiTrophy className="w-3.5 h-3.5 text-yellow-primary flex-shrink-0" />
+                    <li key={idx} className="text-base sm:text-[15px] text-text-secondary flex items-center gap-2">
+                      <HiTrophy className="w-4 h-4 text-yellow-primary flex-shrink-0" />
                       {honor}
                     </li>
                   ))}

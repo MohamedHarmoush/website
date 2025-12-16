@@ -45,7 +45,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                 )}
               </div>
             </div>
-            <p className="project-description text-text-secondary mb-4 sm:mb-3 text-sm sm:text-xs leading-relaxed">{project.description}</p>
+            <p className="project-description text-text-secondary mb-4 sm:mb-3 text-base sm:text-sm leading-relaxed">{project.description}</p>
             <div className="tech-stack flex flex-wrap gap-2 sm:gap-1.5 mb-3">
               {project.technologies.map((tech, idx) => (
                 <span

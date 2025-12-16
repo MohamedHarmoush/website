@@ -36,7 +36,7 @@ export default function Home({ resume }: HomeProps) {
             </div>
             
             <h2 className="section-title">About</h2>
-            <p className="text-text-secondary sm:text-sm leading-relaxed">{resume.personal.summary}</p>
+            <p className="text-text-secondary text-lg sm:text-base leading-relaxed">{resume.personal.summary}</p>
           </div>
 
         <div className="glass-card mb-8">
