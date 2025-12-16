@@ -15,13 +15,8 @@ export default function Layout({ children }: LayoutProps) {
         <div className="blob blob-3"></div>
       </div>
 
-      {/* Layout container */}
-      <div className="layout flex min-h-screen print:flex-col">
-        {/* Fixed left sidebar for hero - will be rendered by pages */}
-        <div className="content-wrapper flex-1">
-          {children}
-        </div>
-      </div>
+      {/* Pages handle their own layout structure */}
+      {children}
     </div>
   );
 }

@@ -24,11 +24,11 @@ export default function ResumePage({ resume }: ResumePageProps) {
     <div className="layout flex min-h-screen print:flex-col">
       <HeroSidebar resume={resume} />
       
-      <div className="content-area ml-[380px] flex-1 p-10 max-w-[900px] print:ml-0 print:p-4">
+      <div className="content-area flex-1 print:ml-0 print:p-4">
         {resume.personal.summary && (
           <div className="glass-card mb-8">
             <h2 className="section-title">Summary</h2>
-            <p className="text-text-secondary leading-relaxed">{resume.personal.summary}</p>
+            <p className="text-text-secondary sm:text-sm leading-relaxed">{resume.personal.summary}</p>
           </div>
         )}
 
@@ -45,7 +45,7 @@ export default function ResumePage({ resume }: ResumePageProps) {
         )}
 
         <div className="mt-8 pt-6 border-t border-gray-200 print-hidden text-center">
-          <p className="text-xs text-text-secondary">
+          <p className="text-xs sm:text-[10px] text-text-secondary">
             {currentDate && `Last updated: ${currentDate}`}
           </p>
         </div>

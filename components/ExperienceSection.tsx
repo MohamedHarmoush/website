@@ -22,17 +22,17 @@ export default function ExperienceSection({ experiences }: ExperienceSectionProp
         {experiences.map((exp, index) => (
           <div 
             key={index} 
-            className="experience-item p-6 bg-white/50 backdrop-blur-[10px] rounded-2xl mb-5 border-l-[3px] border-yellow-primary transition-all duration-300 shadow-[0_4px_15px_rgba(0,0,0,0.05)] hover:bg-white/70 hover:shadow-[0_8px_25px_rgba(0,0,0,0.08)] last:mb-0"
+            className="experience-item p-6 sm:p-4 bg-white/50 backdrop-blur-[10px] rounded-2xl sm:rounded-xl mb-5 border-l-[3px] border-yellow-primary transition-all duration-300 shadow-[0_4px_15px_rgba(0,0,0,0.05)] hover:bg-white/70 hover:shadow-[0_8px_25px_rgba(0,0,0,0.08)] last:mb-0"
           >
-            <div className="experience-header flex justify-between items-start mb-2 flex-wrap gap-2.5">
-              <div className="flex-1">
-                <h3 className="company-name text-xl font-semibold text-yellow-dark mb-1">{exp.company}</h3>
-                <p className="job-title text-lg text-text-primary mb-1 font-medium">{exp.position}</p>
+            <div className="experience-header flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2.5">
+              <div className="flex-1 min-w-0">
+                <h3 className="company-name text-xl sm:text-lg font-semibold text-yellow-dark mb-1">{exp.company}</h3>
+                <p className="job-title text-lg sm:text-base text-text-primary mb-1 font-medium">{exp.position}</p>
                 {exp.location && (
-                  <p className="job-location text-sm text-text-secondary mb-4">{exp.location}</p>
+                  <p className="job-location text-sm sm:text-xs text-text-secondary mb-3 sm:mb-4">{exp.location}</p>
                 )}
               </div>
-              <div className="experience-date text-sm text-text-secondary bg-white/60 backdrop-blur-[10px] px-3.5 py-1.5 rounded-[20px] border border-white/80">
+              <div className="experience-date text-sm sm:text-xs text-text-secondary bg-white/60 backdrop-blur-[10px] px-3.5 py-1.5 sm:px-3 sm:py-1 rounded-[20px] border border-white/80 w-fit">
                 <span>{formatDate(exp.startDate)}</span>
                 <span> - </span>
                 <span>{exp.current ? 'Present' : exp.endDate ? formatDate(exp.endDate) : 'Present'}</span>
@@ -44,7 +44,7 @@ export default function ExperienceSection({ experiences }: ExperienceSectionProp
             {exp.achievements && exp.achievements.length > 0 && (
               <ul className="list-none mb-4">
                 {exp.achievements.map((achievement, idx) => (
-                  <li key={idx} className="relative pl-5 mb-2 text-text-secondary text-sm leading-relaxed before:content-['▸'] before:absolute before:left-0 before:text-yellow-primary">
+                  <li key={idx} className="relative pl-5 sm:pl-4 mb-2 text-text-secondary text-sm sm:text-xs leading-relaxed before:content-['▸'] before:absolute before:left-0 before:text-yellow-primary">
                     {achievement}
                   </li>
                 ))}

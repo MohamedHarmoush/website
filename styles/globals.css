@@ -93,7 +93,7 @@
     margin-bottom: 30px;
     position: relative;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     box-shadow: 
       0 8px 32px rgba(0, 0, 0, 0.08),
       inset 0 1px 1px rgba(255, 255, 255, 0.8),
@@ -102,10 +102,17 @@
 
   .glass-card:hover {
     transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.5);
     box-shadow: 
       0 25px 50px rgba(0, 0, 0, 0.12),
       inset 0 1px 1px rgba(255, 255, 255, 0.9),
       inset 0 -1px 1px rgba(0, 0, 0, 0.05);
+  }
+
+  @media (hover: none) {
+    .glass-card:hover {
+      transform: none;
+    }
   }
 
   .glass-card::before {
@@ -126,6 +133,7 @@
     align-items: center;
     gap: 15px;
     color: #1f2937;
+    letter-spacing: -0.02em;
   }
 
   .section-title::before {
@@ -134,6 +142,7 @@
     height: 30px;
     background: linear-gradient(180deg, #f59e0b, #d97706);
     border-radius: 2px;
+    flex-shrink: 0;
   }
 
   .print-hidden {
@@ -159,11 +168,23 @@
     z-index: 10;
   }
 
+  @media (max-width: 768px) {
+    .hero-sidebar {
+      position: relative !important;
+      width: 100% !important;
+      height: auto !important;
+      padding: 20px 15px !important;
+      min-height: auto !important;
+    }
+  }
+
   .content-area {
     margin-left: 380px;
     flex: 1;
     padding: 40px 40px 40px 20px;
     max-width: 900px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* Responsive */
@@ -174,6 +195,16 @@
 
     .content-area {
       margin-left: 320px;
+      padding: 30px 20px 30px 15px;
+      max-width: calc(100% - 320px);
+    }
+
+    .glass-card {
+      padding: 30px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
     }
   }
 
@@ -183,19 +214,109 @@
     }
 
     .hero-sidebar {
-      position: relative;
-      width: 100%;
-      height: auto;
-      padding: 30px 20px;
+      position: relative !important;
+      left: auto !important;
+      top: auto !important;
+      width: 100% !important;
+      height: auto !important;
+      padding: 20px 15px !important;
+      min-height: auto !important;
+    }
+
+    .hero-sidebar .glass-card {
+      padding: 25px 20px;
+      margin-bottom: 0;
     }
 
     .content-area {
-      margin-left: 0;
-      padding: 20px;
+      margin-left: 0 !important;
+      padding: 20px 15px;
+      max-width: 100%;
+      width: 100%;
     }
 
     .glass-card {
-      padding: 25px;
+      padding: 20px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+
+    .section-title::before {
+      width: 3px;
+      height: 24px;
+    }
+
+    /* Reduce blob size and opacity on mobile */
+    .blob-1 {
+      width: 400px;
+      height: 400px;
+    }
+
+    .blob-2 {
+      width: 350px;
+      height: 350px;
+    }
+
+    .blob-3 {
+      width: 300px;
+      height: 300px;
+    }
+
+    .blob {
+      opacity: 0.2;
+      filter: blur(80px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-sidebar {
+      padding: 15px 10px;
+    }
+
+    .hero-sidebar .glass-card {
+      padding: 20px 15px;
+    }
+
+    .content-area {
+      margin-left: 0 !important;
+      padding: 15px 10px;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .glass-card {
+      padding: 18px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+    }
+
+    .section-title::before {
+      width: 3px;
+      height: 20px;
+    }
+
+    /* Further reduce blobs on small screens */
+    .blob-1,
+    .blob-2,
+    .blob-3 {
+      width: 250px;
+      height: 250px;
+    }
+
+    .blob {
+      opacity: 0.15;
+      filter: blur(60px);
     }
   }
   
