@@ -17,6 +17,7 @@ export interface WorkExperience {
   current?: boolean;
   description?: string;
   achievements: string[];
+  technologies?: string[];
 }
 
 export interface Education {

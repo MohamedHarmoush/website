@@ -93,6 +93,18 @@ export default function ExperienceSection({ experiences }: ExperienceSectionProp
                 })}
               </ul>
             )}
+            {exp.technologies && exp.technologies.length > 0 && (
+              <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-yellow-primary/20">
+                {exp.technologies.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="px-3 py-1 bg-yellow-primary/10 border border-yellow-primary/30 rounded-[16px] text-sm sm:text-xs text-yellow-dark font-medium"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>

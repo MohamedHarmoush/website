@@ -27,7 +27,8 @@
         "Implemented Server-Driven UI for the components of the Kreuzfahrten plugin, enabling dynamic and flexible UI rendering based on backend configurations",
         "Improved user experience by collaborating with product managers, resulting in a 10% increase in customer satisfaction",
         "Optimized the Kreuzfahrten plugin, reducing its size by 40%, improving performance, and enhancing maintainability"
-      ]
+      ],
+      "technologies": ["Kotlin", "Jetpack Compose", "Clean Architecture", "Dagger", "gRPC", "Server-Driven UI", "MVVM", "MVI", "Coroutines", "Flow","Unit Testing", "UI Testing", "JUnit", "Espresso", "Mockito", "Snapshot Testing"]
     },
     {
       "company": "Check24",
@@ -41,7 +42,8 @@
         "Developed and optimized Android features for the Komplettrad and Reifen plugins",
         "Led code refactoring initiatives, migrating legacy Java code to Kotlin, improving code maintainability and scalability by 25%",
         "Mentored junior developers and collaborated cross-functionally, enhancing team efficiency and development speed"
-      ]
+      ],
+      "technologies": ["Kotlin", "Java", "Android", "MVVM", "MVP", "Dagger", "REST APIs", "Git", "Bitbucket"]
     },
     {
       "company": "EME International",
@@ -55,7 +57,8 @@
         "Developed features and supported mSales app in a two-person team, enhancing functionality and user experience, increasing user satisfaction",
         "Improved order management by keeping detailed logs, cutting error rates by 30%",
         "Integrated handheld thermal printers for invoice printing, ensuring seamless operations"
-      ]
+      ],
+      "technologies": ["Android", "Java", "SQLite", "REST APIs", "Git"]
     },
     {
       "company": "Identity-Solutions",
@@ -69,7 +72,8 @@
         "Developed new Android apps from scratch on a team of two. Ex: Fanzword & Tutlez",
         "Supported existing Android apps either by bug fixing or adding new features. Ex: Upspeak & Sayar",
         "Collaborated with clients to gather requirements, ensuring the delivery of tailored and user-centric solutions"
-      ]
+      ],
+      "technologies": ["Android", "Java", "Kotlin", "XML", "REST APIs", "Git"]
     }
   ],
   "education": [
