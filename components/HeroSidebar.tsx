@@ -45,7 +45,7 @@ export default function HeroSidebar({ resume }: HeroSidebarProps) {
                 <HiMail className="w-4 h-4" />
                 <span className="text-xs font-semibold">Email</span>
               </div>
-              <span className="text-[11px] sm:text-[10px] font-normal break-all opacity-90">{personal.contact.email}</span>
+              <span className="text-sm sm:text-xs font-normal break-all opacity-90">{personal.contact.email}</span>
             </a>
           )}
           <div className="flex flex-row gap-2 sm:gap-1.5 w-full max-w-[200px] sm:max-w-full justify-center">

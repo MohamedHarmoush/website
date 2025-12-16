@@ -1,236 +1,316 @@
 # Resume Website
 
-A modern, responsive resume website built with Next.js, TypeScript, and Tailwind CSS. Easily editable through JSON configuration and automatically deployed to GitHub Pages.
+A modern, responsive resume website built with Next.js, TypeScript, and Tailwind CSS. Hosted for free on GitHub Pages.
 
-## Features
+## 🚀 Features
 
-- 📄 **Easy Editing**: Edit your resume by updating a single JSON file
-- 🎨 **Modern Design**: Clean, professional, and responsive design
-- 🖨️ **Print-Friendly**: Optimized for printing
-- 🚀 **Auto-Deploy**: Automatic deployment to GitHub Pages via GitHub Actions
-- 📱 **Mobile Responsive**: Works perfectly on all devices
-- ⚡ **Fast**: Static site generation for optimal performance
+- **Easy to Edit**: All content is stored in `data/resume.json` - just edit the JSON file to update your resume
+- **Modern Design**: Glassmorphism design with animated background blobs, inspired by [momabrouk.com](https://momabrouk.com/)
+- **Responsive**: Works perfectly on desktop, tablet, and mobile devices
+- **ATS-Friendly**: Optimized for Applicant Tracking Systems with structured data and print-friendly styles
+- **Free Hosting**: Automatically deployed to GitHub Pages via GitHub Actions
 
-## Quick Start
-
-### Prerequisites
-
-- Node.js 18+ and npm
-- Git
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone <your-repo-url>
-cd website
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Edit your resume data:
-   - Open `data/resume.json`
-   - Update all sections with your information
-
-4. Add your resume PDF:
-   - Place your PDF file in `public/Mohamed_Harmoush_resume.pdf`
-   - Or update the filename in `pages/index.tsx` if using a different name
-
-5. Run development server:
-```bash
-npm run dev
-```
-
-6. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## Editing Your Resume
-
-### Resume Data Structure
-
-Edit `data/resume.json` to update your resume. The structure includes:
-
-- **personal**: Name, title, summary, and contact information
-- **experience**: Work experience with company, position, dates, and achievements
-- **education**: Educational background with degrees and institutions
-- **skills**: Categorized skills list
-- **projects**: Personal or professional projects
-- **certifications**: Professional certifications
-
-### Example: Adding Work Experience
-
-```json
-{
-  "company": "Tech Company Inc.",
-  "position": "Senior Software Engineer",
-  "location": "San Francisco, CA",
-  "startDate": "2020-01",
-  "endDate": "2023-12",
-  "current": false,
-  "description": "Led development of scalable web applications",
-  "achievements": [
-    "Improved application performance by 40%",
-    "Mentored team of 5 junior developers",
-    "Implemented CI/CD pipeline reducing deployment time by 60%"
-  ]
-}
-```
-
-### Date Format
-
-- Use `YYYY-MM` format for dates (e.g., "2020-01" for January 2020)
-- Use `YYYY` format for years only (e.g., "2020")
-- Set `"current": true` for current positions
-
-## Deployment to GitHub Pages
-
-### Initial Setup
-
-1. **Create GitHub Repository**:
-   - Create a new repository on GitHub (e.g., `resume-website` or `yourusername.github.io`)
-   - **Important**: If you want your site at `https://yourusername.github.io/`, name your repository `yourusername.github.io` (replace `yourusername` with your GitHub username)
-   - If you use a different name, your site will be at `https://yourusername.github.io/repo-name/`
-   - Push your code to the `main` branch:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/yourusername/your-repo-name.git
-   git push -u origin main
-   ```
-
-2. **Add Your Resume PDF**:
-   - Place your `Mohamed_Harmoush_resume.pdf` file in the `public/` directory
-   - The file will be accessible at `/Mohamed_Harmoush_resume.pdf` on your deployed site
-
-3. **Configure GitHub Pages**:
-   - Go to your repository on GitHub
-   - Navigate to **Settings** → **Pages**
-   - Under **Source**, select **"GitHub Actions"** (not "Deploy from a branch")
-   - The GitHub Actions workflow will automatically handle deployment
-
-4. **Base Path Configuration**:
-   - The GitHub Actions workflow automatically sets the correct `BASE_PATH` based on your repository name
-   - If your repo is `yourusername.github.io`, the base path will be empty (root domain)
-   - If your repo has any other name, the base path will be `/repo-name`
-   - **No manual configuration needed** - the workflow handles this automatically
-
-### Automatic Deployment
-
-The GitHub Actions workflow (`.github/workflows/deploy.yml`) will:
-1. Trigger automatically on every push to the `main` branch
-2. Build the Next.js static site with the correct base path
-3. Deploy to GitHub Pages
-4. Your site will be live within 1-2 minutes
-
-### Your Site URL
-
-After deployment, your site will be available at:
-- `https://yourusername.github.io/` (if repository is named `yourusername.github.io`)
-- `https://yourusername.github.io/repo-name/` (if repository has a different name)
-
-**Example**: If your GitHub username is `mohamedharmoush` and your repo is `resume-website`, your site will be at:
-`https://mohamedharmoush.github.io/resume-website/`
-
-### First Deployment
-
-1. After pushing your code, go to the **Actions** tab in your GitHub repository
-2. You should see the "Deploy to GitHub Pages" workflow running
-3. Wait for it to complete (usually 1-2 minutes)
-4. Once complete, visit your site URL
-5. If you see a 404, wait a few more minutes for DNS propagation
-
-### Updating Your Resume
-
-To update your resume:
-1. Edit `data/resume.json` with your new information
-2. Commit and push the changes:
-   ```bash
-   git add data/resume.json
-   git commit -m "Update resume information"
-   git push
-   ```
-3. The site will automatically rebuild and deploy within 1-2 minutes
-
-## Project Structure
+## 📁 Project Structure
 
 ```
 website/
 ├── components/          # React components
-│   ├── Layout.tsx
-│   ├── ResumeHeader.tsx
-│   ├── ExperienceSection.tsx
-│   ├── EducationSection.tsx
-│   ├── SkillsSection.tsx
-│   ├── ProjectsSection.tsx
-│   └── CertificationsSection.tsx
+│   ├── HeroSidebar.tsx      # Left sidebar with personal info
+│   ├── ExperienceSection.tsx # Work experience display
+│   ├── EducationSection.tsx  # Education display
+│   ├── SkillsSection.tsx     # Skills display
+│   ├── ProjectsSection.tsx   # Projects display
+│   └── CertificationsSection.tsx # Certifications display
 ├── data/
-│   └── resume.json      # Your resume data (EDIT THIS!)
+│   └── resume.json      # ⭐ MAIN CONTENT FILE - Edit this to update your resume
 ├── pages/
-│   ├── _app.tsx
 │   ├── index.tsx        # Home page
-│   └── resume.tsx       # Full resume page
-├── public/
-│   └── Mohamed_Harmoush_resume.pdf  # Your PDF resume
+│   ├── resume.tsx       # Full resume page
+│   └── _document.tsx    # SEO and meta tags
 ├── styles/
-│   └── globals.css      # Global styles
+│   └── globals.css       # Global styles and animations
 ├── types/
-│   └── resume.ts        # TypeScript types
-└── next.config.js       # Next.js configuration
+│   └── resume.ts         # TypeScript type definitions
+└── public/               # Static assets (PDF resume, etc.)
 ```
 
-## Customization
+## ✏️ How to Update Your Resume
 
-### Styling
+### Quick Start
 
-- Edit `tailwind.config.js` to customize colors and theme
-- Modify `styles/globals.css` for global styles
-- Update component files for component-specific styling
+1. **Edit `data/resume.json`** - This is the main file containing all your resume data
+2. **Commit and push** - Changes will automatically deploy to GitHub Pages
+
+### Detailed Guide
+
+#### 1. Personal Information
+
+Update the `personal` section in `data/resume.json`:
+
+```json
+{
+  "personal": {
+    "name": "Your Name",
+    "title": "Your Job Title",
+    "summary": "Your professional summary...",
+    "contact": {
+      "email": "your.email@example.com",
+      "phone": "+1234567890",
+      "location": "City, Country",
+      "linkedin": "https://linkedin.com/in/yourprofile",
+      "github": "https://github.com/yourusername"
+    }
+  }
+}
+```
+
+#### 2. Work Experience
+
+Add or update experience entries:
+
+```json
+{
+  "experience": [
+    {
+      "company": "Company Name",
+      "position": "Your Position",
+      "location": "City, Country",
+      "startDate": "2024-01",  // Format: YYYY-MM
+      "endDate": "2024-12",     // Leave empty "" for current position
+      "current": true,          // Set to true if current position
+      "achievements": [
+        "Achievement 1",
+        "Achievement 2"
+      ],
+      "technologies": ["Kotlin", "Java", "Android"]  // Technologies used
+    }
+  ]
+}
+```
+
+**Note**: The structure is flexible - you can add any additional fields you need. The TypeScript types support this with `[key: string]: any`.
+
+#### 3. Education
+
+```json
+{
+  "education": [
+    {
+      "institution": "University Name",
+      "degree": "Bachelor of Science",
+      "field": "Computer Science",
+      "location": "City, Country",
+      "startDate": "2014",
+      "endDate": "2018",
+      "gpa": "3.5",  // Optional
+      "honors": ["Dean's List", "Summa Cum Laude"]  // Optional
+    }
+  ]
+}
+```
+
+#### 4. Skills
+
+```json
+{
+  "skills": [
+    {
+      "category": "Android Development",
+      "items": ["Kotlin", "Java", "Jetpack Compose"]
+    },
+    {
+      "category": "Architecture",
+      "items": ["MVVM", "MVI", "Clean Architecture"]
+    }
+  ]
+}
+```
+
+#### 5. Projects (Optional)
+
+```json
+{
+  "projects": [
+    {
+      "name": "Project Name",
+      "description": "Project description...",
+      "technologies": ["React", "TypeScript"],
+      "url": "https://project-url.com",
+      "github": "https://github.com/username/project",
+      "highlights": [
+        "Highlight 1",
+        "Highlight 2"
+      ]
+    }
+  ]
+}
+```
+
+#### 6. Certifications (Optional)
+
+```json
+{
+  "certifications": [
+    {
+      "name": "Certification Name",
+      "issuer": "Issuing Organization",
+      "date": "2024-01",
+      "credentialId": "ABC123",  // Optional
+      "url": "https://certification-url.com"  // Optional
+    }
+  ]
+}
+```
 
 ### Adding New Sections
 
-1. Add the section type to `types/resume.ts`
-2. Update `data/resume.json` with your data
-3. Create a new component in `components/`
-4. Import and use it in `pages/resume.tsx`
+The resume structure is flexible! To add a new section:
 
-## Scripts
+1. **Add to `data/resume.json`**:
+   ```json
+   {
+     "newSection": [
+       {
+         "field1": "value1",
+         "field2": "value2"
+       }
+     ]
+   }
+   ```
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server (for testing)
-- `npm run lint` - Run ESLint
+2. **Update `types/resume.ts`** (optional, for TypeScript support):
+   ```typescript
+   export interface Resume {
+     // ... existing fields
+     newSection?: NewSectionType[];
+     [key: string]: any; // Already supports additional fields
+   }
+   ```
 
-## Troubleshooting
+3. **Create a component** in `components/` to display the new section
+
+4. **Add to pages** (`pages/index.tsx` or `pages/resume.tsx`)
+
+## 🎨 Customization
+
+### Colors
+
+Edit `styles/globals.css` to change the color scheme:
+
+```css
+:root {
+  --yellow-primary: #f59e0b;  /* Main accent color */
+  --yellow-light: #fbbf24;
+  --yellow-dark: #d97706;
+  /* ... */
+}
+```
+
+### Fonts
+
+The site uses the Inter font family. To change:
+
+1. Update `styles/globals.css`:
+   ```css
+   @import url('https://fonts.googleapis.com/css2?family=YourFont:wght@300;400;500;600;700&display=swap');
+   ```
+
+2. Update `tailwind.config.js`:
+   ```javascript
+   fontFamily: {
+     sans: ['YourFont', 'sans-serif'],
+   }
+   ```
+
+### Styling Components
+
+Each component uses Tailwind CSS classes. You can modify:
+- `components/ExperienceSection.tsx` - Experience card styling
+- `components/HeroSidebar.tsx` - Sidebar styling
+- `components/SkillsSection.tsx` - Skills display
+- etc.
+
+## 🚀 Deployment
+
+### Automatic Deployment (GitHub Pages)
+
+The site automatically deploys when you push to the `main` branch:
+
+1. Make changes to `data/resume.json` or other files
+2. Commit and push:
+   ```bash
+   git add .
+   git commit -m "Update resume"
+   git push origin main
+   ```
+3. GitHub Actions will build and deploy automatically
+4. Your site will be live at `https://yourusername.github.io/repository-name/`
+
+### Manual Build
+
+To build locally:
+
+```bash
+npm install
+npm run build
+```
+
+The static site will be in the `out/` directory.
+
+### Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+Visit `http://localhost:3000` to see your site.
+
+## 📝 Best Practices
+
+1. **Keep JSON Valid**: Always ensure your `resume.json` is valid JSON
+2. **Use Consistent Dates**: 
+   - Experience: `YYYY-MM` format (e.g., "2024-01")
+   - Education: `YYYY` format (e.g., "2018")
+3. **Highlight Achievements**: Use specific metrics and results in achievements
+4. **Update Technologies**: Keep technologies list current and relevant
+5. **Test Locally**: Always test changes locally before pushing
+
+## 🔧 Troubleshooting
 
 ### Build Errors
 
-- Ensure all required fields in `resume.json` are filled
-- Check that date formats are correct
-- Verify TypeScript types match your data structure
+- **JSON Syntax Error**: Validate your `resume.json` using a JSON validator
+- **Type Errors**: Check `types/resume.ts` matches your JSON structure
+- **Missing Fields**: Ensure required fields are present (name, title, summary, etc.)
 
-### GitHub Pages Not Updating
+### Deployment Issues
 
-- Check GitHub Actions tab for workflow status and any error messages
-- Ensure Pages source is set to "GitHub Actions" (not "Deploy from a branch")
-- Verify the workflow completed successfully (green checkmark)
-- Wait 2-3 minutes after deployment for changes to propagate
-- Clear your browser cache or try an incognito window
-- Check that your repository name matches your expected URL structure
+- Check GitHub Actions workflow in `.github/workflows/deploy.yml`
+- Ensure repository settings allow GitHub Pages
+- Verify `basePath` in `next.config.js` matches your repository name
 
 ### Styling Issues
 
 - Clear browser cache
-- Check that Tailwind CSS is properly configured
-- Verify `globals.css` is imported in `_app.tsx`
+- Check Tailwind classes are valid
+- Verify CSS custom properties in `globals.css`
 
-## License
+## 📚 Resources
 
-MIT License - feel free to use this template for your own resume website!
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs)
+- [GitHub Pages Documentation](https://docs.github.com/en/pages)
 
-## Support
+## 🤝 Contributing
 
-For issues or questions, please open an issue on GitHub.
+This is a personal resume website. Feel free to fork and customize for your own use!
+
+## 📄 License
+
+This project is open source and available for personal use.
+
+---
+
+**Last Updated**: January 2025
