@@ -113,17 +113,18 @@ export default function Home({ resume }: HomeProps) {
 
           {/* Download buttons */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-3 flex-wrap mt-8 print:hidden">
-            <a
-              href="/Mohamed_Harmoush_resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              download="Mohamed_Harmoush_Resume.pdf"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-5 sm:py-2.5 bg-yellow-primary text-white rounded-[50px] sm:rounded-[40px] text-sm sm:text-xs font-medium hover:bg-yellow-dark transition-all duration-300 shadow-[0_4px_15px_rgba(245,158,11,0.3)] hover:shadow-[0_8px_30px_rgba(245,158,11,0.4)] active:scale-95"
-              aria-label="Download resume PDF"
-            >
-              <FaFilePdf className="w-4 h-4" />
-              Download PDF
-            </a>
+            {resume.personal.resumePdf && (
+              <a
+                href={resume.personal.resumePdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-5 sm:py-2.5 bg-yellow-primary text-white rounded-[50px] sm:rounded-[40px] text-sm sm:text-xs font-medium hover:bg-yellow-dark transition-all duration-300 shadow-[0_4px_15px_rgba(245,158,11,0.3)] hover:shadow-[0_8px_30px_rgba(245,158,11,0.4)] active:scale-95"
+                aria-label="Download resume PDF"
+              >
+                <FaFilePdf className="w-4 h-4" />
+                Download PDF
+              </a>
+            )}
             <a
               href="/Mohamed_Harmoush_Resume.txt"
               target="_blank"
