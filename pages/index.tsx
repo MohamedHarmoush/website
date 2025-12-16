@@ -9,7 +9,6 @@ import SkillsSection from '@/components/SkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import CertificationsSection from '@/components/CertificationsSection';
 import { FaFilePdf } from 'react-icons/fa';
-import { HiDocumentArrowDown } from 'react-icons/hi2';
 
 interface HomeProps {
   resume: Resume;
@@ -112,8 +111,8 @@ export default function Home({ resume }: HomeProps) {
           <EducationSection education={resume.education} />
 
           {/* Download buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-3 flex-wrap mt-8 print:hidden">
-            {resume.personal.resumePdf && (
+          {resume.personal.resumePdf && (
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-3 flex-wrap mt-8 print:hidden">
               <a
                 href={resume.personal.resumePdf}
                 target="_blank"
@@ -124,20 +123,8 @@ export default function Home({ resume }: HomeProps) {
                 <FaFilePdf className="w-4 h-4" />
                 Download PDF
               </a>
-            )}
-            <a
-              href="/Mohamed_Harmoush_Resume.txt"
-              target="_blank"
-              rel="noopener noreferrer"
-              download="Mohamed_Harmoush_Resume.txt"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-5 sm:py-2.5 bg-white/60 backdrop-blur-[10px] border border-white/80 text-text-primary rounded-[50px] sm:rounded-[40px] text-sm sm:text-xs font-medium hover:bg-white/80 transition-all duration-300 shadow-[0_4px_15px_rgba(0,0,0,0.05)] active:scale-95"
-              aria-label="Download plain text resume for ATS systems"
-              title="Plain text version optimized for Applicant Tracking Systems"
-            >
-              <HiDocumentArrowDown className="w-4 h-4" />
-              TXT (ATS)
-            </a>
-          </div>
+            </div>
+          )}
 
           {/* Print-friendly footer */}
           {websiteUrl && (
