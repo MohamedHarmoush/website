@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 import resumeData from '@/data/resume.json';
 
 export default function Document() {
-  const { personal } = resumeData;
+  const { personal, skills, education, experience } = resumeData;
   const fullName = personal.name;
   const title = `${fullName} - ${personal.title}`;
   const description = personal.summary;
@@ -21,7 +21,7 @@ export default function Document() {
     'MVI',
     'Düsseldorf',
     'Germany',
-    ...(personal.skills || []).flatMap(skill => skill.items || [])
+    ...(skills || []).flatMap(skill => skill.items || [])
   ].join(', ');
 
   // Structured data for ATS and search engines
@@ -43,21 +43,21 @@ export default function Document() {
       personal.contact.github
     ].filter(Boolean),
     description: description,
-    knowsAbout: (personal.skills || []).flatMap(skill => skill.items || []),
-    alumniOf: personal.education && personal.education.length > 0 ? {
+            knowsAbout: (skills || []).flatMap(skill => skill.items || []),
+    alumniOf: education && education.length > 0 ? {
       '@type': 'EducationalOrganization',
-      name: personal.education[0]?.institution || '',
+      name: education[0]?.institution || '',
       address: {
         '@type': 'PostalAddress',
-        addressLocality: personal.education[0]?.location || ''
+        addressLocality: education[0]?.location || ''
       }
     } : undefined,
-    worksFor: personal.experience && personal.experience.length > 0 ? {
+    worksFor: experience && experience.length > 0 ? {
       '@type': 'Organization',
-      name: personal.experience[0]?.company || '',
+      name: experience[0]?.company || '',
       address: {
         '@type': 'PostalAddress',
-        addressLocality: personal.experience[0]?.location || ''
+        addressLocality: experience[0]?.location || ''
       }
     } : undefined
   };

@@ -69,7 +69,7 @@ export default function Home({ resume }: HomeProps) {
         <div className="glass-card mb-8 print:hidden">
           <h2 className="section-title">Get in Touch</h2>
           <p className="text-text-secondary sm:text-sm mb-4">
-            I'm open to new opportunities and collaborations. Feel free to reach out!
+            I&apos;m open to new opportunities and collaborations. Feel free to reach out!
           </p>
           <div className="flex flex-wrap gap-3">
             <a
