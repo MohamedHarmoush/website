@@ -88,10 +88,12 @@ export default function ResumePage({ resume }: ResumePageProps) {
         </div>
 
         {resume.personal.summary && (
-          <div className="glass-card mb-8 print:border-0 print:shadow-none">
+          <section className="mb-8">
             <h2 className="section-title">Summary</h2>
-            <p className="text-text-secondary text-lg sm:text-base leading-relaxed">{resume.personal.summary}</p>
-          </div>
+            <div className="p-6 sm:p-4 bg-white/50 backdrop-blur-[10px] rounded-2xl sm:rounded-xl border-l-[3px] border-yellow-primary transition-all duration-300 shadow-[0_4px_15px_rgba(0,0,0,0.05)] hover:bg-white/70 hover:shadow-[0_8px_25px_rgba(0,0,0,0.08)] print:border-0 print:shadow-none">
+              <p className="text-text-secondary text-lg sm:text-base leading-relaxed">{resume.personal.summary}</p>
+            </div>
+          </section>
         )}
 
         <ExperienceSection experiences={resume.experience} />

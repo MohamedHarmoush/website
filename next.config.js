@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production'
-// BASE_PATH is set by GitHub Actions workflow, or defaults based on environment
-// For GitHub Pages: empty string if repo is username.github.io, otherwise /repo-name
-const basePath = process.env.BASE_PATH || (isProd ? '' : '')
+// BASE_PATH is set by GitHub Actions workflow
+// For custom domain: empty string (no basePath needed)
+// For GitHub Pages subdomain: /repo-name if not username.github.io
+const basePath = process.env.BASE_PATH || ''
 
 const nextConfig = {
   output: 'export',

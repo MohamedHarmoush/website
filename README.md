@@ -232,19 +232,41 @@ Each component uses Tailwind CSS classes. You can modify:
 
 ## 🚀 Deployment
 
-### Automatic Deployment (GitHub Pages)
+### Quick Deployment Guide
 
-The site automatically deploys when you push to the `main` branch:
+This website is configured to deploy to `https://mohamedHarmoush.com` using GitHub Pages.
 
-1. Make changes to `data/resume.json` or other files
-2. Commit and push:
-   ```bash
-   git add .
-   git commit -m "Update resume"
-   git push origin main
-   ```
-3. GitHub Actions will build and deploy automatically
-4. Your site will be live at `https://yourusername.github.io/repository-name/`
+**📖 For complete step-by-step instructions, see [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)**
+
+### Quick Steps:
+
+1. **Push code to GitHub** (if not already done)
+2. **Enable GitHub Pages**: Repository → Settings → Pages → Source: GitHub Actions
+3. **Set custom domain**: Settings → Pages → Custom domain: `mohamedHarmoush.com`
+4. **Configure DNS** at your domain registrar (see DEPLOYMENT_GUIDE.md)
+5. **Wait for deployment** (GitHub Actions will build automatically)
+
+### Automatic Deployment
+
+Once configured, the site automatically deploys when you push to `main`:
+
+```bash
+git add .
+git commit -m "Update resume"
+git push origin main
+```
+
+GitHub Actions will build and deploy automatically. Changes go live at `https://mohamedHarmoush.com` within 2-5 minutes.
+
+### Files Already Configured
+
+✅ GitHub Actions workflow (`.github/workflows/deploy.yml`)  
+✅ CNAME file (`public/CNAME`)  
+✅ Next.js config for custom domain  
+✅ SEO meta tags updated  
+✅ Sitemap configured
+
+See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for detailed instructions and troubleshooting.
 
 ### Manual Build
 
