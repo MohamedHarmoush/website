@@ -1,0 +1,115 @@
+{
+  "personal": {
+    "name": "Mohamed Harmoush",
+    "title": "Senior Software Engineer",
+    "summary": "Passionate Android Engineer with 5+ years of experience building high-performance apps using Kotlin, Jetpack Compose, and scalable architectures. Skilled in designing clean, maintainable code and optimizing performance. Experienced in collaborating with cross-functional teams, including product managers, designers, and backend engineers, to deliver seamless user experiences.",
+    "contact": {
+      "email": "mkotb.harmoush@gmail.com",
+      "phone": "+49 162 573 4771",
+      "location": "Düsseldorf, Germany (open to relocation)",
+      "website": "",
+      "linkedin": "https://linkedin.com/in/MohamedHarmoush",
+      "github": "https://github.com/MohamedHarmoush",
+      "twitter": ""
+    }
+  },
+  "experience": [
+    {
+      "company": "Check24",
+      "position": "Senior Software Engineer",
+      "location": "Düsseldorf, Germany",
+      "startDate": "2024-04",
+      "endDate": "",
+      "current": true,
+      "description": "",
+      "achievements": [
+        "Designed and built the Kreuzfahrten Android Plugin using Clean Architecture, Kotlin, Jetpack Compose, Dagger, and gRPC, ensuring maintainable code",
+        "Implemented Server-Driven UI for the components of the Kreuzfahrten plugin, enabling dynamic and flexible UI rendering based on backend configurations",
+        "Improved user experience by collaborating with product managers, resulting in a 10% increase in customer satisfaction",
+        "Optimized the Kreuzfahrten plugin, reducing its size by 40%, improving performance, and enhancing maintainability"
+      ]
+    },
+    {
+      "company": "Check24",
+      "position": "Software Engineer",
+      "location": "Münster, Germany",
+      "startDate": "2022-08",
+      "endDate": "2024-04",
+      "current": false,
+      "description": "",
+      "achievements": [
+        "Developed and optimized Android features for the Komplettrad and Reifen plugins",
+        "Led code refactoring initiatives, migrating legacy Java code to Kotlin, improving code maintainability and scalability by 25%",
+        "Mentored junior developers and collaborated cross-functionally, enhancing team efficiency and development speed"
+      ]
+    },
+    {
+      "company": "EME International",
+      "position": "Software Engineer",
+      "location": "Cairo, Egypt",
+      "startDate": "2021-05",
+      "endDate": "2022-07",
+      "current": false,
+      "description": "",
+      "achievements": [
+        "Developed features and supported mSales app in a two-person team, enhancing functionality and user experience, increasing user satisfaction",
+        "Improved order management by keeping detailed logs, cutting error rates by 30%",
+        "Integrated handheld thermal printers for invoice printing, ensuring seamless operations"
+      ]
+    },
+    {
+      "company": "Identity-Solutions",
+      "position": "Software Engineer",
+      "location": "Alexandria, Egypt",
+      "startDate": "2018-07",
+      "endDate": "2021-04",
+      "current": false,
+      "description": "",
+      "achievements": [
+        "Developed new Android apps from scratch on a team of two. Ex: Fanzword & Tutlez",
+        "Supported existing Android apps either by bug fixing or adding new features. Ex: Upspeak & Sayar",
+        "Collaborated with clients to gather requirements, ensuring the delivery of tailored and user-centric solutions"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Ain Shams University",
+      "degree": "Bachelor of Computer Science",
+      "field": "Computer Science",
+      "location": "Cairo, Egypt",
+      "startDate": "2014",
+      "endDate": "2018",
+      "gpa": "",
+      "honors": []
+    }
+  ],
+  "skills": [
+    {
+      "category": "Android Development",
+      "items": ["Java", "Kotlin", "Jetpack Compose", "Coroutines", "Flow", "Navigation", "Paging", "Data Binding"]
+    },
+    {
+      "category": "Architecture",
+      "items": ["MVP", "MVVM", "MVI", "Clean Architecture", "SOLID Principles"]
+    },
+    {
+      "category": "Networking",
+      "items": ["gRPC", "REST APIs"]
+    },
+    {
+      "category": "Testing",
+      "items": ["Unit Testing", "UI Testing", "JUnit", "Espresso", "Mockito", "Snapshot Testing"]
+    },
+    {
+      "category": "Dependency Injection",
+      "items": ["Dagger2", "Hilt", "Koin"]
+    },
+    {
+      "category": "Tools",
+      "items": ["Git", "Bitbucket", "GitHub"]
+    }
+  ],
+  "projects": [],
+  "certifications": []
+}
